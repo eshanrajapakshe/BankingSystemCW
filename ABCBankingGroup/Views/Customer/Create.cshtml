@@ -1,0 +1,70 @@
+﻿@model Customer
+
+<form method="post">
+    <div>Create An Account</div>
+
+    <div asp-validation-summary="All"></div>
+
+    <div>
+        <label asp-for="FirstName">First Name:</label><br>
+        <input asp-for="FirstName">
+        <span asp-validation-for="FirstName" class="text-danger"></span>
+    </div>
+    
+    <div>
+        <label asp-for="LastName">Last Name:</label><br>
+        <input asp-for="LastName">
+        <span asp-validation-for="LastName" class="text-danger"></span>
+    </div>
+    
+    <div>
+        <label asp-for="AccType">Account Type:</label><br>
+        <select asp-for="AccType">
+          <option selected>Please select</option>
+          <option value="Current">Current</option>
+          <option value="Savings">Savings</option>
+        </select>
+        <span asp-validation-for="AccType" class="text-danger"></span>
+    </div>
+    
+    <div>
+        <label asp-for="Gender">Gender:</label><br>
+        <select asp-for="Gender">
+          <option selected>Please select</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+        </select>
+        <span asp-validation-for="Gender" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label asp-for="Mobile">Mobile No:</label><br>
+        <input asp-for="Mobile">
+        <span asp-validation-for="Mobile" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label asp-for="Email">Email Address:</label><br>
+        <input asp-for="Email">
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label asp-for="DOB">Date Of Birth:</label><br>
+        <input type="date" asp-for="DOB">
+        <span asp-validation-for="DOB" class="text-danger"></span>
+    </div>
+
+
+     <button type="submit" class="btn btn-primary">Create</button>
+
+     <a asp-controller="Dashboard" asp-action="Display" class="btn btn-secondary">
+         Back to List
+     </a>
+</form> 
+
+@section Scripts {
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}

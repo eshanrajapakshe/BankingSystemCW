@@ -1,0 +1,63 @@
+﻿@model Customer
+
+<form method="post" asp-action="Edit">
+    <div>Create An Account</div>
+
+   <input asp-for="CustomerID" hidden />
+
+    <div>
+        <label asp-for="FirstName">First Name:</label><br>
+        <input asp-for="FirstName">
+    </div>
+    
+    <div>
+        <label asp-for="LastName">Last Name:</label><br>
+        <input asp-for="LastName">
+    </div>
+    
+    <div>
+        <label asp-for="AccType">Account Type:</label><br>
+        <select asp-for="AccType">
+          <option selected>Please select</option>
+          <option value="Current">Current</option>
+          <option value="Savings">Savings</option>
+        </select>
+    </div>
+    
+    <div>
+        <label asp-for="Gender">Gender:</label><br>
+        <select asp-for="Gender">
+          <option selected>Please select</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+        </select>
+    </div>
+
+    <div>
+        <label asp-for="Mobile">Mobile No:</label><br>
+        <input asp-for="Mobile">
+    </div>
+
+    <div>
+        <label asp-for="Email">Email Address:</label><br>
+        <input asp-for="Email">
+    </div>
+
+    <div>
+        <label asp-for="DOB">Date Of Birth:</label><br>
+        <input type="date" asp-for="DOB">
+    </div>
+
+
+     <button type="submit" class="btn btn-primary">Delete</button>
+
+     <a asp-controller="Dashboard" asp-action="Display" class="btn btn-secondary">
+         Back to List
+     </a>
+</form> 
+
+@section Scripts {
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}
